@@ -1,19 +1,47 @@
 import React, { Component } from 'react';
-import MemberItem from './MemberItem';
+import TeamItem from './TeamItem';
+import EmployeeItem from './EmployeeItem';
 
 class Members extends Component {
+
+  teamName(e) {
+      if (e.target.value) {
+        this.props.teamName = e.target.value;
+      }
+  }
   render() {
-    let memberItems;
+    let teamItems;
     if(this.props.members) {
-      memberItems = this.props.members.map(member => {
+      teamItems = this.props.members.map(member => {
         return(
-          <MemberItem key={member.team} member={member} />
+          <TeamItem key={member.team} member={member} />
         );
       });
     }
+    let employeeItems;
+    if(this.props.members && this.props.teamName) {
+      let temp = this.props.members;
+      for(var i = 0; i < this.props.members.length; i++) {
+        if(temp[i] === this.props.teamName) {
+          employeeItems = temp[i].employees.map(member => {
+            return(
+              <EmployeeItem member={member} />
+            );
+          });
+        }
+      }
+    }
     return (
       <div className="Members">
-        {memberItems}
+        <select onChange={this.teamName.bind(this)}>
+          <option value="">Teams</option>
+          {teamItems}
+        </select>
+        <hr/>
+        <select ref="employees">
+          <option value="">Employees</option>
+          {employeeItems}
+        </select>
       </div>
     );
   }

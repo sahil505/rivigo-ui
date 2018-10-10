@@ -7,6 +7,14 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      teamName: "",
+      members: []
+    }
+  }
+
+  componentWillMount() {
+    this.setState({
+      teamName: "",
       members: [
         {
           team:  'Engineering',
@@ -25,14 +33,14 @@ class App extends Component {
           employees:  ['Ankit  Tiwari',  'Ramesh Kumar']
         }
       ]
-    }
+    })
   }
 
   render() {
     return (
       <div className="App">
         Rivigo App
-        <Members members={this.state.members}/>
+        <Members members={this.state.members} teamName={this.state.teamName}/>
       </div>
     );
   }
