@@ -1,25 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Members from './Components/Members';
 import './App.css';
 
 class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      members: [
+        {
+          team:  'Engineering',
+          employees:  ['Lawana  Fan',  'Larry  Rainer',  'Aman  Juneja',  'Leah  Shumway']
+        },
+        {
+          team:  'Executive',
+          employees:  ['Rohan  Gupta',  'Ronda  Dean',  'Robby  Maharaj']
+        },
+        {
+          team:  'Finance',
+          employees:  ['Caleb  Brown',  'Carol  Smithson',  'Carl  Sorensen']
+        },
+        {
+          team:  'Sales',
+          employees:  ['Ankit  Tiwari',  'Ramesh Kumar']
+        }
+      ]
+    }
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        Rivigo App
+        <Members members={this.state.members}/>
       </div>
     );
   }
