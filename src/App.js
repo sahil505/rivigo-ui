@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Members from './Components/Members';
+import AddTeam from './Components/AddTeam';
+import AddEmployee from './Components/AddEmployee';
 import './App.css';
 
 class App extends Component {
@@ -39,14 +41,31 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        Rivigo App
-        <Members members={this.state.members} nteam={this.state.teamName} teamName={this.handleTeamName.bind(this)}/>
+        <h3>Rivigo App</h3>
+        <hr/>
+        <Members members={this.state.members} nteam={this.state.teamName} teamName={this.handleTeamName.bind(this)} />
+        <hr/>
+        <AddTeam addTeam={this.handleAddTeam.bind(this)} />
+        <hr/>
+        <AddEmployee addEmployee={this.handleAddEmployee.bind(this)} members={this.state.members} />
       </div>
     );
   }
 
   handleTeamName(team){
     this.setState({teamName: team});
+  }
+
+  handleAddTeam(member) {
+    let members = this.state.members;
+    members.push(member);
+    this.setState({members: members});
+  }
+
+  handleAddEmployee(member) {
+    let members = this.state.members;
+    members.push(member);
+    this.setState({members: members});
   }
 }
 
