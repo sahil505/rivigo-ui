@@ -11,16 +11,21 @@ class AddEmployee extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if(this.refs.addTeam.value === '') {
-      alert("Please enter a team name!");
+    // console.log(this.refs);
+    if(this.refs.selectedTeam.value === '') {
+      alert("Please select a team!");
     } else {
-      this.setState({newMember:{
-        team: this.refs.addTeam.value,
-        employees:[]
-      }}, function() {
-        this.props.addTeam(this.state.newMember);
-        this.refs.addTeam.value = '';
-        // alert('Team added successfully!');
+      // console.log(this.refs.selectedTeam.value);
+      let temp = this.props.members;
+      for (var i = 0; i < this.props.members.length; i++) {
+        if (temp[i].team === this.refs.selectedTeam.value){
+          temp[i].employees.push(this.refs.addEmployee.value);
+        }
+      }
+      console.log(temp);
+      this.setState({newMember:temp}, function() {
+        this.refs.selectedTeam.value = '';
+        this.refs.addEmployee.value = '';
       })
     }
   }
@@ -34,18 +39,19 @@ class AddEmployee extends Component {
         );
       });
     }
-    console.log(this.props.members);
+    // console.log(this.props.members);
     return (
       <div>
         <h3>Add Employee</h3>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <div>
             <label>Select Team</label><br/>
-            <select>
+            <select ref="selectedTeam">
+              <option value="">Teams</option>
               {teamItems}
-            </select>
-            <input type="text" ref="addTeam"/>
-          </div>
+            </select><br/><br/>
+            <input type="text" ref="addEmployee"/>
+          </div><br/>
           <input type="submit" value="Submit" />
         </form>
       </div>

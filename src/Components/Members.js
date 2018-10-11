@@ -9,6 +9,7 @@ class Members extends Component {
         this.props.teamName(e.target.value);
       }
   }
+  
   render() {
     let teamItems;
     if(this.props.members) {
