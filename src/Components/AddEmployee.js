@@ -2,11 +2,37 @@ import React, { Component } from 'react';
 import TeamItem from './TeamItem';
 
 class AddEmployee extends Component {
-  constructor(){
+
+  constructor() {
     super();
     this.state = {
-      newMember: {}
+      newMember: {},
+      query: '',
+      results: []
     }
+  }
+
+  getInfo() {
+    let members = this.props.members;
+    let temp = this.props.members;
+    let temp2 = this.state.results;
+    for(var i = 0; i < members.length; i++) {
+      if (temp[i].team === this.refs.selectedTeam.value) {
+        temp2.push(temp[i].employees);
+      }
+    }
+    this.setState({results: temp2});
+    // console.log(this.state.results);
+  }
+
+  handleInputChange() {
+    this.setState({query: this.search.value}, function(){
+      if (this.state.query && this.state.query.length > 1) {
+        if (this.state.query.length % 2 === 0) {
+          this.getInfo();
+        }
+      }
+    });
   }
 
   handleSubmit(e) {
@@ -49,7 +75,7 @@ class AddEmployee extends Component {
         <form onSubmit={this.handleSubmit.bind(this)}>
           <div>
             <label>Select Team</label><br/>
-            <select ref="selectedTeam">
+            <select ref="selectedTeam" onChange={this.getInfo.bind(this)}>
               <option value="">Teams</option>
               {teamItems}
             </select><br/><br/>
