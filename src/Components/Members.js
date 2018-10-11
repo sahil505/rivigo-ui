@@ -6,7 +6,7 @@ class Members extends Component {
 
   teamName(e) {
       if (e.target.value) {
-        this.props.teamName = e.target.value;
+        this.props.teamName(e.target.value);
       }
   }
   render() {
@@ -19,13 +19,14 @@ class Members extends Component {
       });
     }
     let employeeItems;
-    if(this.props.members && this.props.teamName) {
+    if(this.props.members && this.props.nteam) {
+      // console.log(this.props.nteam);
       let temp = this.props.members;
       for(var i = 0; i < this.props.members.length; i++) {
-        if(temp[i] === this.props.teamName) {
+        if(temp[i].team === this.props.nteam) {
           employeeItems = temp[i].employees.map(member => {
             return(
-              <EmployeeItem member={member} />
+              <EmployeeItem key={member} member={member} />
             );
           });
         }

@@ -40,9 +40,13 @@ class App extends Component {
     return (
       <div className="App">
         Rivigo App
-        <Members members={this.state.members} teamName={this.state.teamName}/>
+        <Members members={this.state.members} nteam={this.state.teamName} teamName={this.handleTeamName.bind(this)}/>
       </div>
     );
+  }
+
+  handleTeamName(team){
+    this.setState({teamName: team});
   }
 }
 
