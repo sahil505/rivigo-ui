@@ -9,7 +9,7 @@ class Members extends Component {
         this.props.teamName(e.target.value);
       }
   }
-  
+
   render() {
     let teamItems;
     if(this.props.members) {
@@ -21,7 +21,6 @@ class Members extends Component {
     }
     let employeeItems;
     if(this.props.members && this.props.nteam) {
-      // console.log(this.props.nteam);
       let temp = this.props.members;
       for(var i = 0; i < this.props.members.length; i++) {
         if(temp[i].team === this.props.nteam) {

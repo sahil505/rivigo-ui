@@ -19,7 +19,7 @@ class AddTeam extends Component {
       }}, function() {
         this.props.addTeam(this.state.newMember);
         this.refs.addTeam.value = '';
-        // alert('Team added successfully!');
+        alert('Team added successfully!');
       })
     }
   }
