@@ -5,9 +5,9 @@ import EmployeeItem from './EmployeeItem';
 class Members extends Component {
 
   teamName(e) {
-      if (e.target.value) {
-        this.props.teamName(e.target.value);
-      }
+    if (e.target.value) {
+      this.props.teamName(e.target.value);
+    }
   }
 
   render() {
