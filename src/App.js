@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Modal from './Components/Modal';
 import Members from './Components/Members';
 import AddTeam from './Components/AddTeam';
 import AddEmployee from './Components/AddEmployee';
@@ -16,6 +17,7 @@ class App extends Component {
 
   componentWillMount() {
     this.setState({
+      show: false,
       teamName: "",
       members: [
         {
@@ -41,15 +43,26 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h3>Rivigo App</h3>
+        <h3 className="main-heading">Rivigo Team Management</h3>
+        <hr/>
+        <input type="button" onClick={this.showModal.bind(this)} value="Show Modal"/>
+        <Modal show={this.state.show} onClose={this.showModal.bind(this)}>
         <hr/>
         <Members members={this.state.members} nteam={this.state.teamName} teamName={this.handleTeamName.bind(this)} />
         <hr/>
         <AddTeam addTeam={this.handleAddTeam.bind(this)} members={this.state.members} />
         <hr/>
         <AddEmployee addEmployee={this.handleAddEmployee.bind(this)} members={this.state.members} />
+        </Modal>
       </div>
     );
+  }
+
+  showModal() {
+    this.setState({
+      ...this.state,
+      show: !this.state.show
+    });
   }
 
   handleTeamName(team){
