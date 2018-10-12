@@ -1,8 +1,14 @@
 # Rivigo UI Assignment
 
-## Start-up Steps
+A small team management working tool
+
+## Get Started
 
 In the project directory, you can run:
+
+### `npm install`
+
+Installs all the packages & set up the `node_modules` folder
 
 ### `npm start`
 
