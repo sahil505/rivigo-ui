@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class Suggestions extends Component {
+class TeamSuggestions extends Component {
   render() {
     return (
-      <option value={this.props.member}>
+      <option className="teamSuggestions">
         {this.props.member}
       </option>
     );
   }
 }
 
-export default Suggestions;
+export default TeamSuggestions;

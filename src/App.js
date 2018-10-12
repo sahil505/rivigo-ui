@@ -45,7 +45,7 @@ class App extends Component {
         <hr/>
         <Members members={this.state.members} nteam={this.state.teamName} teamName={this.handleTeamName.bind(this)} />
         <hr/>
-        <AddTeam addTeam={this.handleAddTeam.bind(this)} />
+        <AddTeam addTeam={this.handleAddTeam.bind(this)} members={this.state.members} />
         <hr/>
         <AddEmployee addEmployee={this.handleAddEmployee.bind(this)} members={this.state.members} />
       </div>

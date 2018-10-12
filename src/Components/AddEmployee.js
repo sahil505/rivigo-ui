@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TeamItem from './TeamItem';
-import Suggestions from './Suggestions'
+import EmployeeSuggestions from './EmployeeSuggestions';
 
 class AddEmployee extends Component {
 
@@ -81,7 +81,7 @@ class AddEmployee extends Component {
       for(var i = 0; i < this.state.results.length; i++) {
         employeeSuggestions = temp.map(member => {
           return(
-            <Suggestions key={member} member={member} />
+            <EmployeeSuggestions key={member} member={member} />
           );
         });
       }
