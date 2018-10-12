@@ -32,8 +32,9 @@ Based on the given JSON data:
 - If user tries to add the employee without selecting a team: addition is not allowed
 - If a team is selected in team dropdown then the employees changes accordingly
 - If user tries to submit without selecting both the fields then it is handled with an alert
-- Team and Employee input elements provide auto-complete so that when user type the first '2' letters suggestions are shown.
+- Team and Employee input elements provide auto-complete so that when user types the first '2' letters suggestions are shown.
 
 ## Technologies Used
 
 - ReactJS
+**Please Note : This application is purely build on ReactJS without the use of any external plugin or library for implementation of above mentioned features**
