@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
+.App {
+  text-align: center;
+}
+
 .App .main-heading {
 	position: relative;
 	padding: .50em 1em;
@@ -55,4 +59,18 @@
 .modalFooter {
   position: absolute;
   bottom: 20px;
+}
+
+.manageTeam-btn {
+  cursor: pointer;
+  padding: 15px 15px;
+  border: solid 0px transparent;
+  margin-top: 50px;
+  font-family: 'Ubuntu', sans-serif;
+  color: #e22727;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  background-color: #f0f0f0;
 }

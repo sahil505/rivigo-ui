@@ -12,11 +12,19 @@ class Modal extends Component {
     return (
       <div className="backdrop">
         <div className="modal">
-          {this.props.children}
-          <div className="modalFooter">
-            <button onClick={this.onClose.bind(this)}>
-              Close
-            </button>
+          <div className="modalContent">
+            <div className="modalHeader">
+              <span className="close">
+                <button onClick={this.onClose.bind(this)}>Close</button>
+              </span>
+              <h2>Modal Header</h2>
+            </div>
+            <div className="modalBody">
+              {this.props.children}
+            </div>
+            <div className="modalFooter">
+
+            </div>
           </div>
         </div>
       </div>
