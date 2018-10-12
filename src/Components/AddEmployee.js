@@ -17,11 +17,11 @@ class AddEmployee extends Component {
     let members = this.props.members;
     let temp = this.props.members;
     let temp2 = this.state.results;
+    console.log(temp2);
     for(var i = 0; i < members.length; i++) {
       if (temp[i].team === this.refs.selectedTeam.value) {
         for (var j = 0; j < temp[i].employees.length; j++) {
-          if (temp[i].employees[j].startsWith(this.state.query)) {
-            console.log(this.state.query);
+          if (temp[i].employees[j].startsWith(this.state.query) && this.state.query) {
             temp2.push(temp[i].employees[j]);
           }
         }
