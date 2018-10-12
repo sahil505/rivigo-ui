@@ -21,3 +21,19 @@ You will also see any lint errors in the console.
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.
+
+## Features Implemented
+Based on the given JSON data:
+
+- Teams dropdown
+- Employees dropdown
+- Add Team option
+- Add employee option
+- If user tries to add the employee without selecting a team: addition is not allowed
+- If a team is selected in team dropdown then the employees changes accordingly
+- If user tries to submit without selecting both the fields then it is handled with an alert
+- Team and Employee input elements provide auto-complete so that when user type the first '2' letters suggestions are shown.
+
+## Technologies Used
+
+- ReactJS
