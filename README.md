@@ -37,4 +37,5 @@ Based on the given JSON data:
 ## Technologies Used
 
 - ReactJS
-**Please Note : This application is purely build on ReactJS without the use of any external plugin or library for implementation of above mentioned features**
+
+#### Please Note : This application is purely build on ReactJS without the use of any external plugin or library for implementation of above mentioned features
