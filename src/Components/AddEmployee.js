@@ -17,12 +17,13 @@ class AddEmployee extends Component {
     let members = this.props.members;
     let temp = this.props.members;
     let temp2 = this.state.results;
-    console.log(temp2);
     for(var i = 0; i < members.length; i++) {
       if (temp[i].team === this.refs.selectedTeam.value) {
         for (var j = 0; j < temp[i].employees.length; j++) {
           if (temp[i].employees[j].startsWith(this.state.query) && this.state.query) {
-            temp2.push(temp[i].employees[j]);
+            if (this.state.results.indexOf(temp[i].employees[j]) === -1) {
+              temp2.push(temp[i].employees[j]);
+            }
           }
         }
       }
@@ -31,7 +32,7 @@ class AddEmployee extends Component {
   }
 
   handleInputChange() {
-    this.setState({query: this.search.value}, function(){
+    this.setState({query: this.refs.addEmployee.value}, function(){
       if (this.state.query && this.state.query.length > 1) {
         if (this.state.query.length % 2 === 0) {
           this.getInfo();
@@ -96,10 +97,10 @@ class AddEmployee extends Component {
               {teamItems}
             </select><br/><br/>
             <label>Enter Employee name</label><br/>
-            <input type="text" ref={input => this.search = input} onChange={this.handleInputChange.bind(this)} />
-            <ul>
+            <input type="text" list="suggestedEmployees" ref="addEmployee" onChange={this.handleInputChange.bind(this)} />
+            <datalist id="suggestedEmployees">
               {employeeSuggestions}
-            </ul>
+            </datalist>
           </div><br/>
           <input type="submit" value="Submit" />
         </form>
