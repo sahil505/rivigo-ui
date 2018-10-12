@@ -6,7 +6,7 @@ A small team management working tool
 
 In the project directory, you can run:
 
-### `npm install`
+### 1. `npm install`
 
 Installs all the packages & set up the `node_modules` folder
 
