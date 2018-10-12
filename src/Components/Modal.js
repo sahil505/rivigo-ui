@@ -11,7 +11,8 @@ class Modal extends Component {
     }
     return (
       <div className="backdrop">
-        <div className="modal">
+        <div className="modal" role="dialog"
+        aria-labelledby="manageTeam" aria-describedby="Dynamically manage team">
           <div className="modalContent">
             <div className="modalHeader">
               <span className="close-btn" onClick={this.onClose.bind(this)}>x</span>

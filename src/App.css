@@ -110,6 +110,7 @@
 	overflow: hidden;
 	text-align: center;
 }
+
 .viewTeamHead span {
 	position: relative;
 	display: inline-block;
@@ -117,6 +118,7 @@
 	padding: 0 1em;
 	text-align: left;
 }
+
 .viewTeamHead span::before,
 .viewTeamHead span::after {
 	position: absolute;
@@ -126,9 +128,11 @@
 	height: 1px;
 	background-color: #ccc;
 }
+
 .viewTeamHead span::before {
 	right: 100%;
 }
+
 .viewTeamHead span::after {
 	left: 100%;
 }
@@ -181,6 +185,7 @@
 	overflow: hidden;
 	text-align: center;
 }
+
 .addTeamHead span {
 	position: relative;
 	display: inline-block;
@@ -188,6 +193,7 @@
 	padding: 0 1em;
 	text-align: left;
 }
+
 .addTeamHead span::before,
 .addTeamHead span::after {
 	position: absolute;
@@ -197,9 +203,11 @@
 	height: 1px;
 	background-color: #ccc;
 }
+
 .addTeamHead span::before {
 	right: 100%;
 }
+
 .addTeamHead span::after {
 	left: 100%;
 }
@@ -248,11 +256,11 @@
   background-color: #7f8ff4;
 }
 
-
 .addEmployeeHead {
 	overflow: hidden;
 	text-align: center;
 }
+
 .addEmployeeHead span {
 	position: relative;
 	display: inline-block;
@@ -260,6 +268,7 @@
 	padding: 0 1em;
 	text-align: left;
 }
+
 .addEmployeeHead span::before,
 .addEmployeeHead span::after {
 	position: absolute;
@@ -269,9 +278,11 @@
 	height: 1px;
 	background-color: #ccc;
 }
+
 .addEmployeeHead span::before {
 	right: 100%;
 }
+
 .addEmployeeHead span::after {
 	left: 100%;
 }

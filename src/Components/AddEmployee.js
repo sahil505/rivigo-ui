@@ -15,20 +15,19 @@ class AddEmployee extends Component {
 
   getInfo() {
     let members = this.props.members;
-    let temp = this.props.members;
-    let temp2 = this.state.results;
+    let temp = this.state.results;
     for(var i = 0; i < members.length; i++) {
-      if (temp[i].team === this.refs.selectedTeam.value) {
-        for (var j = 0; j < temp[i].employees.length; j++) {
-          if (temp[i].employees[j].startsWith(this.state.query) && this.state.query) {
-            if (this.state.results.indexOf(temp[i].employees[j]) === -1) {
-              temp2.push(temp[i].employees[j]);
+      if (members[i].team === this.refs.selectedTeam.value) {
+        for (var j = 0; j < members[i].employees.length; j++) {
+          if (members[i].employees[j].startsWith(this.state.query) && this.state.query) {
+            if (this.state.results.indexOf(members[i].employees[j]) === -1) {
+              temp.push(members[i].employees[j]);
             }
           }
         }
       }
     }
-    this.setState({results: temp2});
+    this.setState({results: temp});
   }
 
   handleInputChange() {

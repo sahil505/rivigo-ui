@@ -7,6 +7,8 @@ class Members extends Component {
   teamName(e) {
     if (e.target.value) {
       this.props.teamName(e.target.value);
+    } else {
+      this.props.teamName("");
     }
   }
 
@@ -34,7 +36,7 @@ class Members extends Component {
     }
     return (
       <div className="Members">
-        <select className="viewTeams" title="View current teams" onChange={this.teamName.bind(this)}>
+        <select className="viewTeams" title="View current teams" refs="teams" onChange={this.teamName.bind(this)}>
           <option value="">View Teams</option>
           {teamItems}
         </select>
