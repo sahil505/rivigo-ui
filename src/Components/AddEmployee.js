@@ -94,7 +94,7 @@ class AddEmployee extends Component {
               <option value="">Select a Team</option>
               {teamItems}
             </select>
-            <label className="addTeamLabel" htmlFor="addEmployee">Enter Employee name</label>
+            <label className="addTeamLabel" htmlFor="addEmployee">Employee name</label>
             <input type="text" className="addEmployeeInput" list="suggestedEmployees" ref="addEmployee"
             placeholder="Enter the employee name to add" onChange={this.handleInputChange.bind(this)} />
             <datalist id="suggestedEmployees">
