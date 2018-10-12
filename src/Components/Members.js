@@ -34,11 +34,11 @@ class Members extends Component {
     }
     return (
       <div className="Members">
-        <select className="viewTeams" onChange={this.teamName.bind(this)}>
+        <select className="viewTeams" title="View current teams" onChange={this.teamName.bind(this)}>
           <option value="">View Teams</option>
           {teamItems}
         </select>
-        <select className="viewEmployees" ref="employees">
+        <select className="viewEmployees" title="View employees corresponding to the team" ref="employees">
           <option value="">View Employees</option>
           {employeeItems}
         </select>

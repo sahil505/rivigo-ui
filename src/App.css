@@ -275,12 +275,3 @@
 .addEmployeeHead span::after {
 	left: 100%;
 }
-
-
-
-/* .modalBody {padding: 2px 16px;} */
-
-.modalFooter {
-  position: absolute;
-  bottom: 20px;
-}

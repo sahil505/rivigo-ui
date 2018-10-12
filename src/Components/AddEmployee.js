@@ -90,11 +90,12 @@ class AddEmployee extends Component {
       <div className="addEmployeeContainer">
         <form onSubmit={this.handleSubmit.bind(this)}>
           <div className="addEmployeeRow">
-            <select className="viewTeams" ref="selectedTeam" onChange={this.getInfo.bind(this)}>
+            <select className="viewTeams" ref="selectedTeam"
+            title="Select a team in which you want to add an employee" onChange={this.getInfo.bind(this)}>
               <option value="">Select a Team</option>
               {teamItems}
             </select>
-            <label className="addTeamLabel">Enter Employee name</label>
+            <label className="addTeamLabel" htmlFor="addEmployee">Enter Employee name</label>
             <input type="text" className="addEmployeeInput" list="suggestedEmployees" ref="addEmployee"
             placeholder="Enter the employee name to add" onChange={this.handleInputChange.bind(this)} />
             <datalist id="suggestedEmployees">

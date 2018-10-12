@@ -20,9 +20,6 @@ class Modal extends Component {
             <div className="modalBody">
               {this.props.children}
             </div>
-            <div className="modalFooter">
-
-            </div>
           </div>
         </div>
       </div>
