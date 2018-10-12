@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TeamItem from './TeamItem';
+import Suggestions from './Suggestions'
 
 class AddEmployee extends Component {
 
@@ -18,11 +19,15 @@ class AddEmployee extends Component {
     let temp2 = this.state.results;
     for(var i = 0; i < members.length; i++) {
       if (temp[i].team === this.refs.selectedTeam.value) {
-        temp2.push(temp[i].employees);
+        for (var j = 0; j < temp[i].employees.length; j++) {
+          if (temp[i].employees[j].startsWith(this.state.query)) {
+            console.log(this.state.query);
+            temp2.push(temp[i].employees[j]);
+          }
+        }
       }
     }
     this.setState({results: temp2});
-    // console.log(this.state.results);
   }
 
   handleInputChange() {
@@ -69,6 +74,17 @@ class AddEmployee extends Component {
         );
       });
     }
+    let employeeSuggestions;
+    if(this.state.results.length > 0) {
+      let temp = this.state.results;
+      for(var i = 0; i < this.state.results.length; i++) {
+        employeeSuggestions = temp.map(member => {
+          return(
+            <Suggestions key={member} member={member} />
+          );
+        });
+      }
+    }
     return (
       <div>
         <h3>Add Employee to a team</h3>
@@ -80,7 +96,10 @@ class AddEmployee extends Component {
               {teamItems}
             </select><br/><br/>
             <label>Enter Employee name</label><br/>
-            <input type="text" ref="addEmployee"/>
+            <input type="text" ref={input => this.search = input} onChange={this.handleInputChange.bind(this)} />
+            <ul>
+              {employeeSuggestions}
+            </ul>
           </div><br/>
           <input type="submit" value="Submit" />
         </form>
