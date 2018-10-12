@@ -46,11 +46,11 @@ class App extends Component {
         <h3 className="main-heading">Rivigo Team Management</h3>
         <input type="button" className="manageTeam-btn" title="Dynamically view/add teams & employees" onClick={this.showModal.bind(this)} value="Manage Team"/>
         <Modal show={this.state.show} onClose={this.showModal.bind(this)}>
-          <hr/>
+          <h3 className="viewTeamHead"><span>View Team & Employees</span></h3>
           <Members members={this.state.members} nteam={this.state.teamName} teamName={this.handleTeamName.bind(this)} />
-          <hr/>
+          <h3 className="addTeamHead"><span>Add Team</span></h3>
           <AddTeam addTeam={this.handleAddTeam.bind(this)} members={this.state.members} />
-          <hr/>
+          <h3 className="addEmployeeHead"><span>Add Employee</span></h3>
           <AddEmployee addEmployee={this.handleAddEmployee.bind(this)} members={this.state.members} />
         </Modal>
       </div>

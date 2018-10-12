@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TeamSuggestions from './TeamSuggestions';
+import '../App.css';
 
 class AddTeam extends Component {
   constructor(){
@@ -64,17 +65,17 @@ class AddTeam extends Component {
       }
     }
     return (
-      <div>
-        <h3>Add Team</h3>
+      <div className="addTeamContainer">
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <div>
-            <label>Enter Team Name</label><br/>
-            <input type="text" list="suggestedTeams" ref="addTeam" onChange={this.handleInputChange.bind(this)} />
+          <div className="addTeamRow">
+            <label className="addTeamLabel" htmlFor="addTeam">Team Name</label>
+            <input type="text" className="addTeamInput" list="suggestedTeams" ref="addTeam"
+            placeholder="Enter a team to add" onChange={this.handleInputChange.bind(this)} />
             <datalist id="suggestedTeams">
               {teamSuggestions}
             </datalist>
           </div>
-          <input type="submit" value="Submit" />
+          <input type="submit" className="modal-btn" title="Submit to add a new team" value="Submit" />
         </form>
       </div>
     );

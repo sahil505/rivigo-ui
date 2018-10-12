@@ -14,10 +14,8 @@ class Modal extends Component {
         <div className="modal">
           <div className="modalContent">
             <div className="modalHeader">
-              <span className="close">
-                <button onClick={this.onClose.bind(this)}>Close</button>
-              </span>
-              <h2>Modal Header</h2>
+              <span className="close-btn" onClick={this.onClose.bind(this)}>x</span>
+              <h2 className="modalHeading">Manage Team</h2>
             </div>
             <div className="modalBody">
               {this.props.children}

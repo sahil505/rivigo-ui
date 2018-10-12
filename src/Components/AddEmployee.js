@@ -87,22 +87,21 @@ class AddEmployee extends Component {
       }
     }
     return (
-      <div>
-        <h3>Add Employee to a team</h3>
+      <div className="addEmployeeContainer">
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <div>
-            <label>Select Team</label><br/>
-            <select ref="selectedTeam" onChange={this.getInfo.bind(this)}>
-              <option value="">Teams</option>
+          <div className="addEmployeeRow">
+            <select className="viewTeams" ref="selectedTeam" onChange={this.getInfo.bind(this)}>
+              <option value="">Select a Team</option>
               {teamItems}
-            </select><br/><br/>
-            <label>Enter Employee name</label><br/>
-            <input type="text" list="suggestedEmployees" ref="addEmployee" onChange={this.handleInputChange.bind(this)} />
+            </select>
+            <label className="addTeamLabel">Enter Employee name</label>
+            <input type="text" className="addEmployeeInput" list="suggestedEmployees" ref="addEmployee"
+            placeholder="Enter the employee name to add" onChange={this.handleInputChange.bind(this)} />
             <datalist id="suggestedEmployees">
               {employeeSuggestions}
             </datalist>
-          </div><br/>
-          <input type="submit" value="Submit" />
+          </div>
+          <input type="submit" className="modal-btn" title="Submit to add a new employee" value="Submit" />
         </form>
       </div>
     );

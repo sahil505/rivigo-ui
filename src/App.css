@@ -2,6 +2,7 @@
 
 .App {
   text-align: center;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .App .main-heading {
@@ -10,11 +11,11 @@
 	background-color: #f0f0f0;
   text-align: center;
   font-size: 40px;
-  font-family: 'Ubuntu', sans-serif;
   color: #e22727;
   font-weight: bold;
   margin: 32px 100px;
 }
+
 .App .main-heading::before,
 .App .main-heading::after {
 	content: '';
@@ -22,18 +23,33 @@
 	border-style: solid;
 	border-color: transparent;
 }
+
 .App .main-heading::before {
 	top: 100%;
 	left: 0;
 	border-width: 0 15px 15px 0;
 	border-right-color: #e22727;
 }
+
 .App .main-heading::after {
 	top: -15px;
 	right: 0;
 	border-style: solid;
 	border-width: 0 15px 15px 0;
 	border-bottom-color: #e22727;
+}
+
+.manageTeam-btn {
+  cursor: pointer;
+  padding: 15px 15px;
+  border: solid 0px transparent;
+  margin-top: 50px;
+  color: #e22727;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  background-color: #f0f0f0;
 }
 
 .backdrop {
@@ -47,30 +63,224 @@
 }
 
 .modal {
-  background-color: #fff;
+  position: relative;
+  background-color: #FFFFFF;
   border-radius: 5px;
   max-width: 500px;
   min-width: 300px;
+  height: 650px;
   margin: 0 auto;
-  padding: 30px;
-  position: relative;
 }
+
+.modalContent {
+    position: relative;
+    margin: auto;
+    padding: 0;
+}
+
+.modalHeader {
+  background-color: #f0f0f0;
+  padding: 4px 4px;
+  border-radius: 5px;
+}
+
+.modalHeading {
+  text-align: center;
+  font-size: 24px;
+  color: #e22727;
+}
+
+.close-btn {
+    color: grey;
+    cursor: pointer;
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 16px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.viewTeamHead {
+	overflow: hidden;
+	text-align: center;
+}
+.viewTeamHead span {
+	position: relative;
+	display: inline-block;
+	margin: 0 2.5em;
+	padding: 0 1em;
+	text-align: left;
+}
+.viewTeamHead span::before,
+.viewTeamHead span::after {
+	position: absolute;
+	top: 50%;
+	content: '';
+	width: 400%;
+	height: 1px;
+	background-color: #ccc;
+}
+.viewTeamHead span::before {
+	right: 100%;
+}
+.viewTeamHead span::after {
+	left: 100%;
+}
+
+.viewTeams {
+  margin: 20px;
+  width: 150px;
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(https://image.flaticon.com/icons/svg/60/60995.svg) 96% / 15% no-repeat #eee;
+}
+
+.viewEmployees {
+  margin: 20px;
+  width: 165px;
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(https://image.flaticon.com/icons/svg/60/60995.svg) 96% / 15% no-repeat #eee;
+}
+
+.addTeamContainer {
+  text-align: center;
+}
+
+.addEmployeeContainer {
+  text-align: center;
+}
+
+.addTeamRow {
+  margin: auto;
+  width: 50%;
+}
+
+.addEmployeeRow {
+  margin: auto;
+  width: 50%;
+}
+
+.addTeamHead {
+	overflow: hidden;
+	text-align: center;
+}
+.addTeamHead span {
+	position: relative;
+	display: inline-block;
+	margin: 0 2.5em;
+	padding: 0 1em;
+	text-align: left;
+}
+.addTeamHead span::before,
+.addTeamHead span::after {
+	position: absolute;
+	top: 50%;
+	content: '';
+	width: 400%;
+	height: 1px;
+	background-color: #ccc;
+}
+.addTeamHead span::before {
+	right: 100%;
+}
+.addTeamHead span::after {
+	left: 100%;
+}
+
+.addTeamLabel {
+  display: block;
+  color: black;
+  font-size: 16px;
+  text-align: left;
+  margin-bottom: 4px;
+}
+
+.addTeamInput {
+  display: block;
+  width: 220px;
+  background: #fff;
+  color: black;
+  font: inherit;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  border: 0.3px solid #ccc;
+  padding: 14px 12px;
+}
+
+.addEmployeeInput {
+  display: block;
+  width: 250px;
+  background: #fff;
+  color: black;
+  font: inherit;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  border: 0.3px solid #ccc;
+  padding: 14px 12px;
+}
+
+.modal-btn {
+  cursor: pointer;
+  padding: 8px 10px;
+  border: solid 0px transparent;
+  border-radius: 3px;
+  margin-top: 12px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  background-color: #7f8ff4;
+}
+
+
+.addEmployeeHead {
+	overflow: hidden;
+	text-align: center;
+}
+.addEmployeeHead span {
+	position: relative;
+	display: inline-block;
+	margin: 0 2.5em;
+	padding: 0 1em;
+	text-align: left;
+}
+.addEmployeeHead span::before,
+.addEmployeeHead span::after {
+	position: absolute;
+	top: 50%;
+	content: '';
+	width: 400%;
+	height: 1px;
+	background-color: #ccc;
+}
+.addEmployeeHead span::before {
+	right: 100%;
+}
+.addEmployeeHead span::after {
+	left: 100%;
+}
+
+
+
+/* .modalBody {padding: 2px 16px;} */
 
 .modalFooter {
   position: absolute;
   bottom: 20px;
-}
-
-.manageTeam-btn {
-  cursor: pointer;
-  padding: 15px 15px;
-  border: solid 0px transparent;
-  margin-top: 50px;
-  font-family: 'Ubuntu', sans-serif;
-  color: #e22727;
-  font-size: 20px;
-  font-weight: bold;
-  text-transform: uppercase;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  background-color: #f0f0f0;
 }
